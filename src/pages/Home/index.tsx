@@ -1,6 +1,7 @@
 import React from 'react';
 import simpleTemplateImg from '../../assets/images/simple-template-readme.png';
 import { Header } from '../../components/Header';
+import { TemplateCard } from '../../components/TemplateCard';
 import { Container } from './styles';
 
 export const Home = (): JSX.Element => {
@@ -11,38 +12,21 @@ export const Home = (): JSX.Element => {
         <h3 className="description">Choose your template to get started!</h3>
       </div>
       <div className="choose-templates">
-        <div className="template-wrapper">
-          <h3>Simple template</h3>
-          <img src={simpleTemplateImg} />
-          <p>
-            Template description{' '}
-            <span>
-              <a href="#">Use</a>
-            </span>
-          </p>
-        </div>
-
-        <div className="template-wrapper">
-          <h3>Common template</h3>
-          <img src={simpleTemplateImg} />
-          <p>
-            Template description{' '}
-            <span>
-              <a href="#">Use</a>
-            </span>
-          </p>
-        </div>
-
-        <div className="template-wrapper">
-          <h3>JS stack README template</h3>
-          <img src={simpleTemplateImg} />
-          <p>
-            Template description{' '}
-            <span>
-              <a href="#">Use</a>
-            </span>
-          </p>
-        </div>
+        <TemplateCard
+          templateTitle={'Simple template'}
+          srcImg={simpleTemplateImg}
+          templateDescription={'To give your project a good impression'}
+        />
+        <TemplateCard
+          srcImg={simpleTemplateImg}
+          templateTitle={'Common template'}
+          templateDescription={'To use in casual projects'}
+        />
+        <TemplateCard
+          srcImg={simpleTemplateImg}
+          templateTitle={'JS stack README template'}
+          templateDescription={'Easiest way to write a JS/TS project README'}
+        />
       </div>
     </Container>
   );

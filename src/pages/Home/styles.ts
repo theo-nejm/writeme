@@ -33,6 +33,7 @@ export const Container = styled.div`
       border: 1px solid rgb(219, 219, 219);
       background: #fff;
       border-radius: 0.5rem;
+      transition: 0.2s linear;
 
       img {
         width: 20rem;
@@ -67,6 +68,10 @@ export const Container = styled.div`
             }
           }
         }
+      }
+
+      &:hover {
+        transform: scale(1.0175);
       }
     }
   }
