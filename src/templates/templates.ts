@@ -1,4 +1,9 @@
+import simpleTemplateImg from '../assets/images/simple-template-readme.png';
+
 export const simplePT = {
+  title: 'simple-pt',
+  image: simpleTemplateImg,
+  description: 'A simple way to give your project a better impression',
   header: `
     # [PROJECT_TITLE]
 
@@ -42,6 +47,9 @@ export const simplePT = {
 };
 
 export const simpleEN = {
+  title: 'simple-en',
+  image: simpleTemplateImg,
+  description: 'A simple way to give your project a better impression',
   header: `
     # [PROJECT_TITLE]
 
