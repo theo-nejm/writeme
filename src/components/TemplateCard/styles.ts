@@ -26,7 +26,7 @@ export const Container = styled.header`
     gap: 1rem;
     line-height: 1.5rem;
 
-    span {
+    a {
       padding: 0.5rem 1.5rem;
       border: none;
       cursor: pointer;
@@ -35,7 +35,7 @@ export const Container = styled.header`
       background: #00acee;
       transition: all 0.3s ease-in-out;
 
-      a {
+      span {
         font-weight: bold;
         font-size: 0.9rem;
         color: rgb(250, 250, 250);
@@ -44,7 +44,7 @@ export const Container = styled.header`
       &:hover {
         background: none;
 
-        a {
+        span {
           color: #00acee;
         }
       }

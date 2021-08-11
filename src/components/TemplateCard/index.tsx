@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Container } from './styles';
 
 type PropsType = {
@@ -18,9 +19,9 @@ export const TemplateCard = ({
       <img src={srcImg} />
       <p>
         {templateDescription}
-        <span>
-          <a href="#">Use</a>
-        </span>
+        <Link to={`/write/?template=${templateTitle}`}>
+          <span>Use</span>
+        </Link>
       </p>
     </Container>
   );

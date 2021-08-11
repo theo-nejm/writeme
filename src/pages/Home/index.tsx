@@ -4,10 +4,8 @@ import { TemplateCard } from '../../components/TemplateCard';
 import { simpleEN, simplePT } from '../../templates/templates';
 import { Container } from './styles';
 
-const templates = [simpleEN, simplePT];
-
 export const Home = (): JSX.Element => {
-  console.log(simpleEN.image);
+  const templates = [simpleEN, simplePT];
   return (
     <Container>
       <Header />
@@ -15,7 +13,7 @@ export const Home = (): JSX.Element => {
         <h3 className="description">Choose your template to get started!</h3>
       </div>
       <div className="choose-templates">
-        {templates.map(({ title, image, description }) => (
+        {templates.map(({ utilInfos: { title, image, description } }) => (
           <TemplateCard
             key={title}
             templateTitle={title}

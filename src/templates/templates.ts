@@ -1,93 +1,95 @@
 import simpleTemplateImg from '../assets/images/simple-template-readme.png';
 
+export const templateGeneralVariables = {
+  '[PROJECT_TITLE]': 'title',
+  '[PROJECT_DESCRIPTION]': 'description',
+  '[ALT_TEXT]': 'alt',
+  '[IMG_URL]': 'url',
+  '[ABOUT_PROJECT]': 'about',
+  '[INSTALLING_DEPENDENCIES]': 'dependencies',
+  '[HOW_TO_USE]': 'use',
+  '[ANOTHER_COMMENTS]': 'comments',
+  '[FOOTER_TEXT]': 'text',
+};
+
 export const simplePT = {
-  title: 'simple-pt',
-  image: simpleTemplateImg,
-  description: 'A simple README to your project',
-  header: `
-    # [PROJECT_TITLE]
+  utilInfos: {
+    title: 'simple-pt',
+    image: simpleTemplateImg,
+    description: 'A simple README to your project',
+  },
+  templateParts: {
+    header: `
+      # [PROJECT_TITLE]
 
-    [PROJECT_DESCRIPTION]
-  `,
-  projectImg: `
-    ![[ALT_TEXT]]([IMG_URL])
-  `,
-  about: `
-    ## ❓ Sobre
+      [PROJECT_DESCRIPTION]
+    `,
+    projectImg: `
+      ![[ALT_TEXT]]([IMG_URL])
+    `,
+    about: `
+      ## ❓ Sobre
 
-    [ABOUT_PROJECT]
-  `,
-  getingStarted: `
-    ### 📋 Pré-requisitos
+      [ABOUT_PROJECT]
+    `,
+    getingStarted: `
+      ### 📋 Pré-requisitos
 
-    O que você precisa para começar?
+      O que você precisa para começar?
 
-    [INSTALLING_DEPENDENCIES]
+      [INSTALLING_DEPENDENCIES]
+    `,
+    howToUse: `
+      ## 📦 Como usar
 
-    ### 🔧 Instalação
-
-    [INTALLING_COMMANDS]
-  `,
-  howToUse: `
-    ## 📦 Como usar
-
-    [HOW_TO_USE]
-  `,
-  madeWith: `
-    ## 🛠️ Construído com
-
-    [TECHNOLOGIES_USED]
-  `,
-  anotherComments: `
-    [ANOTHER_COMMENTS]
-  `,
-  footer: `
-    [FOOTER_TEXT]
-  `,
+      [HOW_TO_USE]
+    `,
+    anotherComments: `
+      [ANOTHER_COMMENTS]
+    `,
+    footer: `
+      [FOOTER_TEXT]
+    `,
+  },
 };
 
 export const simpleEN = {
-  title: 'simple-en',
-  image: simpleTemplateImg,
-  description: 'A simple README to your project',
-  header: `
-    # [PROJECT_TITLE]
+  utilInfos: {
+    title: 'simple-en',
+    image: simpleTemplateImg,
+    description: 'A simple README to your project',
+  },
+  templateParts: {
+    header: `
+      # [PROJECT_TITLE]
 
-    [PROJECT_DESCRIPTION]
-  `,
-  projectImg: `
-    ![[ALT_TEXT]]([IMG_URL])
-  `,
-  about: `
-    ## ❓ About
+      [PROJECT_DESCRIPTION]
+    `,
+    projectImg: `
+      ![[ALT_TEXT]]([IMG_URL])
+    `,
+    about: `
+      ## ❓ About
 
-    [ABOUT_PROJECT]
-  `,
-  getingStarted: `
-    ### 📋 Getting started
+      [ABOUT_PROJECT]
+    `,
+    getingStarted: `
+      ### 📋 Getting started
 
-    How can you get started?
+      How can you get started?
 
-    [INSTALLING_DEPENDENCIES]
+      [INSTALLING_DEPENDENCIES]
+    `,
+    howToUse: `
+      ## 📦 How to use
 
-    ### 🔧 Downloading
-
-    [INTALLING_COMMANDS]
-  `,
-  howToUse: `
-    ## 📦 How to use
-
-    [HOW_TO_USE]
-  `,
-  madeWith: `
-    ## 🛠️ Made with
-
-    [TECHNOLOGIES_USED]
-  `,
-  anotherComments: `
-    [ANOTHER_COMMENTS]
-  `,
-  footer: `
-    [FOOTER_TEXT]
-  `,
+      [HOW_TO_USE]
+    `,
+    anotherComments: `
+      [ANOTHER_COMMENTS]
+    `,
+    footer: `
+      [FOOTER_TEXT]
+    `,
+  },
 };

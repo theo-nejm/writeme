@@ -11,7 +11,7 @@ ReactDOM.render(
     <Router>
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route path="/write/:template" component={Write} />
+        <Route path="/write" component={Write} />
       </Switch>
     </Router>
   </React.StrictMode>,

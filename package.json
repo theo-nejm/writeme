@@ -9,6 +9,7 @@
     "react-icons": "^4.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
+    "react-toastify": "^7.0.4",
     "styled-components": "^5.3.0",
     "typescript": "^4.3.5",
     "use-sound": "^4.0.1",
@@ -17,6 +18,7 @@
   "devDependencies": {
     "@types/react": "^17.0.15",
     "@types/react-dom": "^17.0.9",
+    "@types/react-toastify": "^4.1.0",
     "@types/styled-components": "^5.1.12",
     "@typescript-eslint/eslint-plugin": "^3.6.1",
     "@typescript-eslint/parser": "^3.6.1",
