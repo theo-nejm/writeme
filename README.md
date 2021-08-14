@@ -1,30 +1,33 @@
-  <h1 align="center"> WRITEME.md</h1>
 
-  <h2 align="center">A easy way to make you project's READMEs.</h2>
+<div align="center">
 
-  <div align="center">
+# WRITEME.md
 
-  ![WRITEME.md project's homepage.](https://i.imgur.com/x2cOgin.png)
+### A simple way to make your READMEs.
+    
+![WRITEME.md project's homepage](https://i.imgur.com/x2cOgin.png)
 
-  </div>
+## ❓ About
 
-  ## ❓ Sobre
+WRITEME.md is a project that uses README templates to make devs life easier while doing their projects' READMEs.
 
+## 📋 Getting started
 
-  WRITEME.md is a project that uses README templates to make devs life easier while doing their projects' READMEs.
+### What are the project's dependencies?
 
-  ### 📋 Pré-requisitos
+#### It just uses:
 
+-> React <br />
+-> styled-compoenents <br />
+-> react-router-dom <br />
 
-  O que você precisa para começar?
+## 📦 How to use
 
+To use, you just have to click in [this link.](http://google.com)
+    
+If you like it, just left your star down bellow! I'll be gratefull!
 
-  It just uses React, styled-compoenents, react-router-dom and typescript as dependencies.
+Made with <3 by Theo Nejm!
 
-  ## 📦 Como usar
-
-  To use, you just have to click in [this link.](http://google.com)
-
-  If you like it, just left your star down bellow! I'll be gratefull!
-
-  Made with <3 by Theo Nejm!
+</div>
+    
