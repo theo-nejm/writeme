@@ -23,7 +23,7 @@ WRITEME.md is a project that uses README templates to make devs life easier whil
 
 ## 📦 How to use
 
-To use, you just have to click in [this link.](http://google.com)
+To use, you just have to click in [this link.](https://writeme.netlify.app)
     
 If you like it, just left your star down bellow! I'll be gratefull!
 
