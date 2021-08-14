@@ -3,9 +3,8 @@
 import React, { FormEvent, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Header } from '../../components/Header';
-import { ShowResult } from '../../components/ShowResult';
 import { useQuery } from '../../hooks/useQuery/useQuery';
-import { simplePT, templateGeneralVariables } from '../../templates/templates';
+import { simpleEN, simplePT, templateGeneralVariables } from '../../templates/templates';
 import { Container } from './styles';
 
 export const Write = (): JSX.Element => {
@@ -21,7 +20,7 @@ export const Write = (): JSX.Element => {
   const [anotherComments, setAnotherComments] = useState('');
   const [footerText, setFooterText] = useState('');
   const [templateInfo, setTemplateInfo] = useState({});
-  const [isFinished, setIsFinished] = useState(false);
+  const [isCopied, setIsCopied] = useState(false);
 
   const handleSubmit = (ev: FormEvent) => {
     ev.preventDefault();
@@ -30,9 +29,12 @@ export const Write = (): JSX.Element => {
 
       const entries = Object.entries(templateGeneralVariables).map((value, index) => [value[0], values[index]]);
       const actualTemplateInfo = Object.fromEntries(entries);
-      setTemplateInfo(buildTemplate(simplePT.templateParts, actualTemplateInfo));
+      setTemplateInfo(buildTemplate(chooseTemplate().templateParts, actualTemplateInfo));
 
-      setIsFinished(true);
+      setIsCopied(true);
+      copyReadmeToClipboard();
+
+      setTimeout(() => setIsCopied(false), 1500)
   }
 
   const buildTemplate = (templateParts: Record<string, string>, actualTemplateInfo: Record<string, string>) => {
@@ -42,6 +44,24 @@ export const Write = (): JSX.Element => {
       })
     })
     return templateParts;
+  }
+
+  const chooseTemplate = () => {
+    switch (query) {
+      case "simple-pt":
+        return simplePT;
+      case "simple-en":
+        return simpleEN;
+      default:
+        return simpleEN;
+    }
+  }
+
+  const copyReadmeToClipboard = async () => {
+    const README: string[] = [];
+
+    Object.values(templateInfo).forEach((value) => README.push(value as string));
+    const isCopied = await navigator.clipboard.writeText(README.join(''));
   }
 
   return (
@@ -58,12 +78,15 @@ export const Write = (): JSX.Element => {
             <Link to="/">Change template</Link>
           </div>
           <form onSubmit={handleSubmit}>
+            <p>You can write any markdown syntax in this section.</p>
             <label htmlFor="project-title">Project title</label>
             <input
               type="text"
               id="project-title"
               onChange={(ev) => setProjectTitle(ev.target.value)}
               value={projectTitle}
+              required
+              placeholder="Write your project title: "
             />
 
             <label htmlFor="project-description">Project description</label>
@@ -71,6 +94,8 @@ export const Write = (): JSX.Element => {
               id="project-title"
               onChange={(ev) => setProjectDescription(ev.target.value)}
               value={projectDescription}
+              required
+              placeholder="Write your project description: "
             />
 
             <label htmlFor="project-image-url">Project image&apos;s url</label>
@@ -79,6 +104,8 @@ export const Write = (): JSX.Element => {
               id="project-image-url"
               onChange={(ev) => setProjectImageUrl(ev.target.value)}
               value={projectImageUrl}
+              required
+              placeholder="Put some valid url: "
             />
 
             <label htmlFor="project-image-alt">
@@ -89,6 +116,8 @@ export const Write = (): JSX.Element => {
               id="project-image-alt"
               onChange={(ev) => setProjectImageAlt(ev.target.value)}
               value={projectImageAlt}
+              required
+              placeholder="Describe your project's image: "
             />
 
             <label htmlFor="about-project">About the project</label>
@@ -96,6 +125,8 @@ export const Write = (): JSX.Element => {
               id="about-project"
               onChange={(ev) => setAboutProject(ev.target.value)}
               value={aboutProject}
+              required
+              placeholder="Tell a little bit more about your project: "
             />
 
             <label htmlFor="project-dependencies">Project dependencies</label>
@@ -103,13 +134,17 @@ export const Write = (): JSX.Element => {
               id="project-dependencies"
               onChange={(ev) => setProjectDependencies(ev.target.value)}
               value={projectDependencies}
+              required
+              placeholder="Dependencies of your project: "
             />
 
-            <label htmlFor="how-to-use">Project dependencies</label>
+            <label htmlFor="how-to-use">How to use</label>
             <textarea
               id="how-to-use"
               onChange={(ev) => setHowToUse(ev.target.value)}
               value={howToUse}
+              required
+              placeholder="Tell how to install/use your project: "
             />
 
             <label htmlFor="another-comments">Another comments</label>
@@ -117,6 +152,8 @@ export const Write = (): JSX.Element => {
               id="another-comments"
               onChange={(ev) => setAnotherComments(ev.target.value)}
               value={anotherComments}
+              required
+              placeholder="You can tell more about your project here [markdown syntax availabled]: "
             />
 
             <label htmlFor="footer">Footer text</label>
@@ -124,17 +161,20 @@ export const Write = (): JSX.Element => {
               id="footer"
               onChange={(ev) => setFooterText(ev.target.value)}
               value={footerText}
+              required
+              placeholder="Leave your mark here: "
             />
 
             <div className="submit-btn-wrapper">
-              <button type="submit">Generate README</button>
+              {!isCopied
+                ? <button type="submit">Generate README</button>
+                : <p id="success-text">copied to clipboard</p>
+              }
             </div>
           </form>
         </div>
       </div>
     </Container>
-
-    {isFinished && <ShowResult templateInfo={templateInfo} />}
     </>
   );
 };

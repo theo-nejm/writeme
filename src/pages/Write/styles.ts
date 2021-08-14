@@ -17,7 +17,7 @@ export const Container = styled.div`
     .write-wrapper {
       background: #fff;
       padding: 0 1.5rem 1.5rem;
-      width: 60vw;
+      width: 50vw;
       height: 70vh;
       border: 1px solid rgb(219, 219, 219);
       border-radius: 0.5rem;
@@ -74,10 +74,16 @@ export const Container = styled.div`
       }
 
       form {
+        p {
+          font-weight: 400;
+          text-align: center;
+          padding: 0.5rem 0 1rem;
+        }
+
         display: flex;
         flex-flow: nowrap column;
         font-weight: 300;
-        letter-spacing: 0.1rem;
+        letter-spacing: 0.125rem;
 
         textarea,
         input {
@@ -87,7 +93,8 @@ export const Container = styled.div`
           border: 1px solid rgb(219, 219, 219);
           border-radius: 0.25rem;
           transition: border 0.2s linear;
-
+          letter-spacing: 0.05rem;
+          font-size: 0.8rem;
           &:focus {
             border: 1px solid #00acee;
           }
@@ -101,6 +108,7 @@ export const Container = styled.div`
         textarea {
           padding: 0.25rem 0.5rem;
           resize: vertical;
+          min-height: 3rem;
           height: 4rem;
         }
 
@@ -146,6 +154,12 @@ export const Container = styled.div`
                 transform: scale(1);
               }
             }
+          }
+
+          p#success-text {
+            text-decoration: none;
+            font-weight: bold;
+            color: #44ff44 !important;
           }
         }
       }

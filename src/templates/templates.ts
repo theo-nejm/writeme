@@ -20,35 +20,55 @@ export const simplePT = {
   },
   templateParts: {
     header: `
-      # [PROJECT_TITLE]
+<div align="center">
 
-      [PROJECT_DESCRIPTION]
+# [PROJECT_TITLE]
+
+[PROJECT_DESCRIPTION]
     `,
     projectImg: `
-      ![[ALT_TEXT]]([IMG_URL])
+![[ALT_TEXT]]([IMG_URL])
+
+</div>
     `,
     about: `
-      ## ❓ Sobre
+<div align="center">
 
-      [ABOUT_PROJECT]
+### ❓ Sobre
+
+</div>
+
+[ABOUT_PROJECT]
     `,
     getingStarted: `
-      ### 📋 Pré-requisitos
+<div align="center">
 
-      O que você precisa para começar?
+## 📋 Pré-requisitos
 
-      [INSTALLING_DEPENDENCIES]
+### O que você precisa para começar?
+
+</div>
+
+[INSTALLING_DEPENDENCIES]
     `,
     howToUse: `
-      ## 📦 Como usar
+<div align="center">
 
-      [HOW_TO_USE]
+## 📦 Como usar
+
+</div>
+
+[HOW_TO_USE]
     `,
     anotherComments: `
-      [ANOTHER_COMMENTS]
+[ANOTHER_COMMENTS]
     `,
     footer: `
-      [FOOTER_TEXT]
+<div align="center">
+
+[FOOTER_TEXT]
+
+</div>
     `,
   },
 };
@@ -61,35 +81,55 @@ export const simpleEN = {
   },
   templateParts: {
     header: `
-      # [PROJECT_TITLE]
+<div align="center">
 
-      [PROJECT_DESCRIPTION]
+# [PROJECT_TITLE]
+
+### [PROJECT_DESCRIPTION]
     `,
     projectImg: `
-      ![[ALT_TEXT]]([IMG_URL])
+![[ALT_TEXT]]([IMG_URL])
+
+</div>
     `,
     about: `
-      ## ❓ About
+<div align="center">
 
-      [ABOUT_PROJECT]
+## ❓ About
+
+</div>
+
+[ABOUT_PROJECT]
     `,
     getingStarted: `
-      ### 📋 Getting started
+<div align="center">
 
-      How can you get started?
+## 📋 Getting started
 
-      [INSTALLING_DEPENDENCIES]
+### What are the project's dependencies?
+
+</div>
+
+[INSTALLING_DEPENDENCIES]
     `,
     howToUse: `
-      ## 📦 How to use
+<div align="center">
 
-      [HOW_TO_USE]
+## 📦 How to use
+
+</div>
+
+[HOW_TO_USE]
     `,
     anotherComments: `
-      [ANOTHER_COMMENTS]
+[ANOTHER_COMMENTS]
     `,
     footer: `
-      [FOOTER_TEXT]
+<div align="center">
+
+[FOOTER_TEXT]
+
+</div>
     `,
   },
 };
